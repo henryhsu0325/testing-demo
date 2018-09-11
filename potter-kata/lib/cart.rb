@@ -8,9 +8,16 @@ class Cart
 
   def calculate
     total = 0
-    for item in @ordered_items do
-      total = total + item * PRICE
+    @ordered_items = @ordered_items.delete_if{ |i| i == 0 }
+
+    if @ordered_items.size == 2 
+      total = total + 2 * PRICE * 0.95
+    else
+      for item in @ordered_items do
+        total = total + item * PRICE
+      end
     end
+    
     return total
   end
 end
