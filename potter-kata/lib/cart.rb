@@ -14,8 +14,10 @@ class Cart
         total = total + 2 * PRICE * 0.95 # 客戶買了一組(二本）)
       elsif @ordered_items.size == 3
         total = total + 3 * PRICE * 0.9 # 客戶買了一組(三本)
-      elsif @ordered_items.size ==4
-        total = total + 4 * PRICE * 0.85 #客戶買了一組(四本)
+      elsif @ordered_items.size == 4
+        total = total + 4 * PRICE * 0.85 # 客戶買了一組(四本)
+      elsif @ordered_items.size == 5
+        total = total + 5 * PRICE * 0.8 # 客戶買了一組(五本)
       else
         total = total + PRICE # 客戶單買了一本
       end
